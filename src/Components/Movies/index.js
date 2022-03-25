@@ -1,6 +1,7 @@
 import './index.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 const Movies = () => {
 
@@ -17,7 +18,9 @@ const Movies = () => {
         return movies.map(movie => {
             return (
                 <div key={movie.id} className='movie-card'>
-                    <img src={movie.posterURL} alt={movie.title} />
+                    <Link to={`/filme/${movie.id}`}>
+                        <img src={movie.posterURL} alt={movie.title} />
+                    </Link>
                 </div>
             )
         })
