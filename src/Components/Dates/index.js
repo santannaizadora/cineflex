@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
+import Footer from "../Footer";
 
 import './index.css';
 
@@ -57,6 +58,7 @@ const Dates = () => {
                     {canRender ? <RenderDates /> : <></>}
                 </div>
             </main>
+            <Footer poster={movie.posterURL} title={movie.title} isSession={false}/>
         </>
     )
 }

@@ -1,0 +1,38 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #DFE6ED;
+    border: 1px solid #9EADBA;
+    height: 117px;
+}
+
+.footer-content{
+    height: 117px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.footer-content-poster img {
+    width: 48px;
+    height: 72px;
+    
+}
+
+.footer-content-poster {
+    min-width: 64px;
+    min-height: 89px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.footer-content-title{
+    size: 26px ;
+}
