@@ -28,7 +28,7 @@ const Movies = () => {
 
     return (
         <>
-            <main>
+            <main className='main-movies'>
                 <div className='page-description'>
                     <h1>Selecione o filme</h1>
                 </div>
