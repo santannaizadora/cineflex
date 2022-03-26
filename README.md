@@ -1,3 +1,5 @@
+[![wakatime](https://wakatime.com/badge/user/4c9bd8dd-92dc-4bb5-b2b5-9ae84b643277/project/706f3c58-467c-46df-81c6-12f60d5bf7ec.svg)](https://wakatime.com/badge/user/4c9bd8dd-92dc-4bb5-b2b5-9ae84b643277/project/706f3c58-467c-46df-81c6-12f60d5bf7ec)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
