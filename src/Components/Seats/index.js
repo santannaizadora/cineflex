@@ -74,7 +74,7 @@ const Seats = () => {
     }
 
     const handleButton = () => {
-        if (seats.length > 0) {
+        if (seats.length > 0 && buyer.length > 0 && buyerCpf.length > 0) {
             axios.post(`https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many`, {
                 ids: seats,
                 name: buyer,
@@ -95,7 +95,7 @@ const Seats = () => {
             })
             
         } else {
-            alert('Selecione pelo menos um assento')
+            alert('Selecione pelo menos um assento e preencha os dados do comprador')
         }
     }
 
