@@ -6,12 +6,15 @@ import axios from "axios";
 import './index.css';
 
 import Footer from "../Footer";
+import RenderSeats from './RenderSeats';
 
 const Seats = () => {
     const [session, setSession] = useState({});
     const [canRender, setCanRender] = useState(false);
+    const [seats, setSeats] = useState([]);
+    const [seatsName, setSeatsName] = useState([]);
     const { idSession } = useParams();
-
+    console.log(seatsName);
     useEffect(() => {
         axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSession}/seats`)
             .then(response => {
@@ -19,16 +22,6 @@ const Seats = () => {
                 setCanRender(true);
             })
     }, [idSession]);
-
-    const RenderSeats = (props) => {
-        const { isAvailable, id, name } = props;
-        const cssColor = isAvailable ? 'available' : 'unavailable';
-        return (
-            <div key={id} className="seat">
-                <div className={`seat-number ${cssColor}`}>{name}</div>
-            </div>
-        )
-    };
 
     const Legend = () => {
         return (
@@ -45,11 +38,11 @@ const Seats = () => {
                     <div className="legend-item-color unavailable"></div>
                     <div className="legend-item-text">Indisponível</div>
                 </div>
-    
+
             </div>
         )
     }
-    
+
     const Inputs = () => {
         return (
             <div className="inputs">
@@ -64,9 +57,9 @@ const Seats = () => {
             </div>
         )
     }
-    
+
     console.log(session);
-    
+
     return (
         <>
             <main className="main-seats">
@@ -77,12 +70,16 @@ const Seats = () => {
                     {canRender ?
                         session.seats.map((seat, index) => {
                             return (
-                            <RenderSeats
-                                key={index}
-                                isAvailable={seat.isAvailable}
-                                name={seat.name}
-                                id={seat.id}
-                            />
+                                <RenderSeats
+                                    key={index}
+                                    isAvailable={seat.isAvailable}
+                                    name={seat.name}
+                                    id={seat.id}
+                                    setSeats={setSeats}
+                                    seats={seats}
+                                    setSeatsName={setSeatsName}
+                                    seatsName={seatsName}
+                                />
                             )
                         })
                         :
@@ -106,7 +103,4 @@ const Seats = () => {
         </>
     )
 }
-
-
-
 export default Seats;
