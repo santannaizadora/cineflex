@@ -10,7 +10,7 @@ const RenderSeats = (props) => {
                 className={`seat-number ${cssColor} ${cssSelected}`}
                 onClick={() => {
                     isAvailable? setIsSelected(!isSelected) : alert('Esse assento não está disponível');
-                    if(!isSelected){
+                    if(!isSelected&&isAvailable){
                         setSeats(seats.concat(id))
                         setSeatsName(seatsName.concat(name))
                     }else{setSeats(

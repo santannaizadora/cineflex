@@ -4,6 +4,7 @@ import Header from '../Header'
 import Home from '../../pages/Home'
 import Movie from '../../pages/Movie'
 import Session from '../../pages/Session'
+import Success from "../../pages/Success";
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/filme/:idMovie" element={<Movie/>} />
                     <Route path="/sessao/:idSession" element={<Session/>} />
+                    <Route path="/sucesso" element={<Success/>} />
                 </Routes>
             </BrowserRouter>
         </>
